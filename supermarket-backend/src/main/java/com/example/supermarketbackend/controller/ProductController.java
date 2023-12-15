@@ -40,7 +40,8 @@ public class ProductController {
         String imageName = null;
 
         try {
-            String uploadImage =  fileUpload.uploadImage("supermarket-ui/public/images/", file);
+//          String uploadImage =  fileUpload.uploadImage("supermarket-ui/public/images/", file);
+            String uploadImage =  fileUpload.uploadImage("C:/ZINEYA/React/vite/green-test/public/images", file);
             product.setImage(uploadImage);
             ProductDto updateProduct =   productService.updateProduct(product, id, product.getCategory().getId());
 
