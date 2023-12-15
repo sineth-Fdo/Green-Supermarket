@@ -1,0 +1,140 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+* { 
+  margin:0;
+  padding:0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.container{
+  max-width: 1170px;
+  height: 210px;
+  /* background-color: red; */
+  margin: auto;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer{
+  background-color:#001a00;
+  padding: 70px 0;
+}
+
+.footer-col{
+  width: 25%;
+  padding: 0 15px;
+}
+
+.disc{
+  color: white;
+  margin-top: 10px;
+  font-size: 12px;
+  
+}
+
+.logo{
+  max-height: 50px;
+}
+
+.op-hours{
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.newsletter{
+  margin-top: 10px;
+}
+
+.footer-col h4{
+  color: white;
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.footer-col h4::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+.row a{
+  margin-bottom: 5px;
+}
+
+.footer-col ul li:not(:last-child){
+  margin-bottom: 10px;
+  
+}
+
+li{
+  list-style-type: none;
+}
+
+.footer-col ul li a{
+  
+  font-size: 16px;
+  text-transform: capitalize;
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+  display: block;
+  transition: all 0.5s ease;
+}
+
+.footer-col ul li a:hover{
+  color:white;
+  padding-left: 10px;
+}
+
+.social-links{
+  margin-top: 30px;
+}
+
+.footer-col .social-links a{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin:0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #3BB143;
+  transition: all 0.5s ease;
+
+}
+
+.footer-col .social-links a:hover{
+  color: #24262b;
+  background-color: #3BB143;
+}
+
+.copyright-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 10px;
+}
+.content{
+  color:rgba(225, 225, 225,0.75)
+}
+
+
+
+.pay-logo {
+  background-color: #3BB143;
+  border: 1px solid rgba(225, 225, 225,0.75);
+  border-radius: 5px;
+  height: 30px;
+}
