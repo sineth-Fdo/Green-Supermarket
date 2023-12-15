@@ -4,6 +4,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import { Manage } from './components/Manage'
 
 
 
@@ -22,6 +23,7 @@ function App() {
           
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>
+            <Route path="/manage" element={<Manage/>}/>
         </Routes>
     
     </BrowserRouter>
