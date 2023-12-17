@@ -1,6 +1,7 @@
 package com.example.supermarketbackend.controller;
 
 import com.example.supermarketbackend.dto.ProductDto;
+import com.example.supermarketbackend.response.CartRequest;
 import com.example.supermarketbackend.service.ProductService;
 import com.example.supermarketbackend.service.impl.FileUpload;
 import lombok.AllArgsConstructor;
@@ -41,7 +42,7 @@ public class ProductController {
 
         try {
 //          String uploadImage =  fileUpload.uploadImage("supermarket-ui/public/images/", file);
-            String uploadImage =  fileUpload.uploadImage("C:/ZINEYA/React/vite/green-test/public/images", file);
+            String uploadImage =  fileUpload.uploadImage("supermarket-ui/public/images/", file);
             product.setImage(uploadImage);
             ProductDto updateProduct =   productService.updateProduct(product, id, product.getCategory().getId());
 
@@ -61,11 +62,11 @@ public class ProductController {
         ProductDto product = productService.getProductById(id);
 
         try {
-            String imagePath = "supermarket-ui/public/images/" + product.getImage(); // Assuming the image name is stored in the imageName field
+            String imagePath = "supermarket-ui/public/images/" + product.getImage();
             File file = new File(imagePath);
 
             HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.IMAGE_JPEG); // Set the appropriate content type based on your image type
+            headers.setContentType(MediaType.IMAGE_JPEG);
             headers.setContentDispositionFormData("attachment", file.getName());
 
             InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
@@ -94,16 +95,6 @@ public class ProductController {
     }
 
 
-//    @PostMapping("/add")
-//    public ResponseEntity<ProductDto> addProductWithCategory(
-//            @RequestPart("productDto") ProductDto productDto,
-//            @RequestPart(value = "imageFile", required = false) MultipartFile imageFile) {
-//        productDto.setImageFile(imageFile);
-//        ProductDto newProduct = productService.addProductWithCategory(productDto);
-//        return new ResponseEntity<>(newProduct, HttpStatus.CREATED);
-//    }
-
-
 
     @PostMapping("/add")
     public ResponseEntity<ProductDto> addProductWithCategory(@RequestBody ProductDto productDto) {
@@ -111,17 +102,6 @@ public class ProductController {
         return new ResponseEntity<>(newProduct, HttpStatus.CREATED);
     }
 
-
-
-//    @PutMapping("update/{id}")
-//    public ResponseEntity<ProductDto> updateProductWithCategory(
-//            @RequestPart("productDto") ProductDto productDto,
-//            @RequestPart(value = "imageFile", required = false) MultipartFile imageFile,
-//            @PathVariable Long id) {
-//        productDto.setImageFile(imageFile);
-//        ProductDto updatedProduct = productService.updateProductWithCategory(productDto, id);
-//        return ResponseEntity.ok(updatedProduct);
-//    }
 
     @PutMapping("update/{id}")
     public ResponseEntity<ProductDto> updateProductWithCategory(@RequestBody ProductDto productDto, @PathVariable Long id) {
@@ -139,6 +119,14 @@ public class ProductController {
     private ResponseEntity<String> deleteProduct(@PathVariable Long id) {
         productService.deleteById(id);
         return ResponseEntity.ok("Product deleted successfully");
+    }
+
+    @PostMapping("/add-to-cart")
+    public ResponseEntity<ProductDto> addProductToCart(@RequestBody CartRequest cartRequest) {
+
+        ProductDto updatedProduct = productService.addProductToCart(cartRequest.getProductId(), cartRequest.getCustomerId(), cartRequest.getQuantity());
+
+        return ResponseEntity.ok(updatedProduct);
     }
 
 }
