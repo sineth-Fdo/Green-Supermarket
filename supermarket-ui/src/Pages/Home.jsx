@@ -14,7 +14,7 @@ const Home = () => {
         </div>
 
         <div className="popular-vege">
-            
+
         </div>
 
         <div className="popular-cate">

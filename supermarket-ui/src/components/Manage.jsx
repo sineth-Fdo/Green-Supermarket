@@ -11,7 +11,7 @@ export const Manage = () => {
                 <div className="buttons">
                     <button onClick={()=>{window.location="/addProduct"}} className='btn1' >Add a new product</button>
                     <button onClick={()=>{window.location="/manaCat"}} className='btn1' >Manage Category</button>
-                </div>  
+                </div>
             </div>
         </div>
     </div>
