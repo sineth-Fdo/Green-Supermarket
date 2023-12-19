@@ -15,18 +15,17 @@ function App() {
   return (
   <>
   
-   <Header/>
-   <Home/>
+ <Header/>
+
 
 
     <BrowserRouter>
     
         <Routes>
-
+            <Route path="/home" element={<Home/>}/>
+            <Route path="/manage" element={<Manage/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>
-            <Route path="/manage" element={<Manage/>}/>
-            <Route path="/home" element={<Home/>}/>
         </Routes>
     
     </BrowserRouter>
