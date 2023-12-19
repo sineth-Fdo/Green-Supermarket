@@ -4,7 +4,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import { Manage } from './components/Manage'
+import { Manage } from './Pages/Manage'
 import Home from './Pages/Home'
 
 
