@@ -1,6 +1,7 @@
 package com.example.supermarketbackend.controller;
 
 import com.example.supermarketbackend.dto.ProductDto;
+import com.example.supermarketbackend.exception.ResourceNotFoundException;
 import com.example.supermarketbackend.response.CartRequest;
 import com.example.supermarketbackend.service.ProductService;
 import com.example.supermarketbackend.service.impl.FileUpload;
@@ -127,6 +128,19 @@ public class ProductController {
         ProductDto updatedProduct = productService.addProductToCart(cartRequest.getProductId(), cartRequest.getCustomerId(), cartRequest.getQuantity());
 
         return ResponseEntity.ok(updatedProduct);
+    }
+
+    // Get all products by category ID
+    @GetMapping("/category/{categoryId}")
+    public ResponseEntity<List<ProductDto>> getProductsByCategoryId(@PathVariable Long categoryId) {
+        try {
+            List<ProductDto> products = productService.getProductsByCategoryId(categoryId);
+            return new ResponseEntity<>(products, HttpStatus.OK);
+        } catch (ResourceNotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
 }

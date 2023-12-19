@@ -1,6 +1,7 @@
 package com.example.supermarketbackend.service;
 
 import com.example.supermarketbackend.dto.ProductDto;
+import com.example.supermarketbackend.entity.Category;
 
 import java.util.List;
 
@@ -12,4 +13,6 @@ public interface ProductService {
     ProductDto addProductWithCategory(ProductDto productDto);
     void deleteById(Long id);
     ProductDto addProductToCart(Long productId, Long customerId, int quantity);
+    Category getCategoryById(Long categoryId);
+    List<ProductDto> getProductsByCategoryId(Long categoryId);
 }
