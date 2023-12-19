@@ -17,6 +17,7 @@ const Home = () => {
 
             <div className="popular-vege">
                 <CategoriesCard />
+                
             </div>
 
             <div className="popular-cate">
