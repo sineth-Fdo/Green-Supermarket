@@ -1,0 +1,21 @@
+.shop-container {
+    width : 100%;
+    height: 100%;
+   
+}
+
+
+.shop-hero {
+    border: 1px solid;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px 0px 20px 0px;
+    
+    
+
+}
+
+

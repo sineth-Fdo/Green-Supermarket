@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import { Manage } from './Pages/Manage'
 import Home from './Pages/Home'
+import Shop from './Pages/Shop'
 
 
 
@@ -23,6 +24,7 @@ function App() {
     
         <Routes>
             <Route path="/home" element={<Home/>}/>
+            <Route path="/shop" element={<Shop/>}/>
             <Route path="/manage" element={<Manage/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>
