@@ -163,5 +163,20 @@ public class ProductServiceImpl implements ProductService {
         return modelMapper.map(product, ProductDto.class);
     }
 
+    // Get all products by category ID
+    public List<ProductDto> getProductsByCategoryId(Long categoryId) {
+        Category category = getCategoryById(categoryId);
+        List<Product> products = productRepository.findByCategory(category);
+        return products.stream()
+                .map(product -> modelMapper.map(product, ProductDto.class))
+                .collect(Collectors.toList());
+    }
+
+    // Helper method to get a category by ID
+    public Category getCategoryById(Long categoryId) {
+        return categoryRepository.findById(categoryId)
+                .orElseThrow(() -> new ResourceNotFoundException("Category not found with id: " + categoryId));
+    }
+
 
 }
