@@ -11,13 +11,14 @@ import ManageCategory from './Pages/ManageCategory'
 
 
 
+
 function App() {
 
 
   return (
   <>
   
- <Header/>
+<Header/>
 
 
 
@@ -25,7 +26,6 @@ function App() {
     
         <Routes>
             <Route path="/home" element={<Home/>}/>
-            <Route path="/shop" element={<Shop/>}/>
             <Route path="/manage" element={<Manage/>}/>
             <Route path="/managecategory" element={<ManageCategory />}></Route>
             <Route path="/login" element={<Login/>}/>
