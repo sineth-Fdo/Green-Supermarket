@@ -1,0 +1,134 @@
+.main-header{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.category-section{
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.block-container{
+    background-color: rgb(255, 255, 255);
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.left-most-div{
+    background-color: rgba(144,25,29,255);
+    width: 30%;
+    height: 100%;
+    margin-right: 10px;
+}
+
+.left-block{
+    /* background-color: blue; */
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+
+}
+
+.right-block{
+    /* background-color: green; */
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.top-cate{
+    width: 100%;
+    height: 50%;
+    background-color: rgb(181, 151, 156);
+    margin-bottom: 10px;
+}
+
+.bottom-cate{
+    width: 100%;
+    height: 50%;
+    background-color: rgba(40,144,205,255);
+}
+
+.left-cate{
+    background-color: rgba(36,166,70,255);
+    width: 50%;
+    height: 100%;
+    margin-right: 10px;
+
+}
+
+.right-cate{
+    background-color: rgba(83,83,83,255);
+    width: 50%;
+    height: 100%;
+    
+}
+
+.common{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.snacks-img{
+    height: 400px;
+    margin-left: 200px;
+}
+
+.beauty-img{
+    height: 200px;
+    /* margin-left: 200px; */
+}
+
+.fish-img{
+    height: 200px;
+    /* margin-left: 100px; */
+}
+
+.vege-img{
+    height: 300px;
+    margin-left: 200px;
+}
+
+.meat-img{
+    height: 200px;
+    margin-left: 250px;
+}
+
+
+.snacks-text{
+    font-size: 25px;
+}
+
+.fish-text{
+    font-size: 25px;
+}
+
+.beauty-text{
+    font-size: 25px;
+}
+
+.vege-text{
+    font-size: 25px;
+}
+
+.meat-text{
+    font-size: 25px;
+}

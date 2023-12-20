@@ -25,4 +25,15 @@ public class Customer {
     @Column(nullable = false , length = 255)
     private String password;
 
+    @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)
+    private Cart cart;
+
+
+    public Customer(Long id, String name, String email, String encode) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = encode;
+    }
+
 }

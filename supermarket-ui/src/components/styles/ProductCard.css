@@ -1,0 +1,99 @@
+
+
+.card-hero {
+
+    border-radius: 15px;
+    background: rgb(188, 245, 176);
+    background: linear-gradient(0deg, rgb(209, 255, 200) 0%, rgb(179, 255, 156) 3%, rgb(195, 255, 180) 9%, rgb(180, 255, 177) 25%, rgb(255, 255, 255) 77%);
+    width: 270px;
+    height: auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+
+}
+
+.card-hero:hover {
+    box-shadow: 0px 0px 10px 0px rgba(30, 255, 49, 0.75);
+    transition: 0.5s;
+}
+
+.card-hero-img {
+
+    width: 95%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-hero-dis {
+  
+    width: 95%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px 10px 0px;
+}
+
+.p-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(69, 102, 59);
+    margin-bottom: 5px;
+    margin-top: 10px;
+   
+}
+
+.p-weight {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(146, 137, 137);
+    margin-bottom: 55px;
+ 
+}
+
+.p-price {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(69, 102, 59);
+}
+.p-image {
+    width: 60%;
+    height: 80%;
+    object-fit: 100% 100%;
+    
+}
+
+.p-name-wrap {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-addcart {
+    border: 1px solid;
+    padding: 10px 35px 10px 35px;
+    background: #000;
+    color: #fff;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    transition: 0.5s;
+
+}
+
+.p-addcart:hover {
+    padding: 10px 40px 10px 40px;
+    transition: 0.2s;
+}

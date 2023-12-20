@@ -15,4 +15,8 @@ public class ProductDto {
     private Long price;
     private String image;
     private CategoryDto category;
+
+    public ProductDto(Long id, String name, Long price) {
+    }
+
 }

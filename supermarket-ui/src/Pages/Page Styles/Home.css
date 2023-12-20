@@ -1,0 +1,58 @@
+.hero-section{
+    display: flex;
+    justify-content: center;
+    height: 40rem;
+    /* background-color: rgb(111, 128, 72); */
+    background-image: url("../public/images/hero3.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.hero-image{
+    max-width: 1440px;
+    width: 100%;
+    height: 100%;
+    /* background-image: url("../public/images/hero3.jpg"); */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+    
+}
+
+.hero-content h1 {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    
+}
+
+
+/* .popular-vege{
+    height: 500px;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+} */
+
+/* .popular-cate{
+    height: 500px;
+    background-color: rgb(255, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+} */
