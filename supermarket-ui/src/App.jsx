@@ -11,24 +11,23 @@ import ManageCategory from './Pages/ManageCategory'
 
 
 
-
 function App() {
 
 
   return (
   <>
   
-<Header/>
+ <Header/>
 
     <BrowserRouter>
     
         <Routes>
             <Route path="/home" element={<Home/>}/>
+            <Route path="/shop" element={<Shop/>}/>
             <Route path="/manage" element={<Manage/>}/>
             <Route path="/managecategory" element={<ManageCategory />}></Route>
-            <Route path="/shop" element={<Shop />}></Route>
-            {/* <Route path="/login" element={<Login/>}/> */}
-            {/* <Route path="/register" element={<Register/>}/> */}
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/register" element={<Register/>}/>
         </Routes>
     
     </BrowserRouter>
