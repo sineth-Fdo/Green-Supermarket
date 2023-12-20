@@ -3,7 +3,9 @@ import "./styles/CategoriesCard.css"
 const CategoriesCard = () =>{
     return(
         <div className="category-section">
+            <br /><br />
             <h1 className="main-header">Popular Categories</h1>
+            <br />
             <div className="block-container">
                 <div className="left-most-div common">
                     <img src="public\snacks.png" alt="snacks image" className="snacks-img"/>

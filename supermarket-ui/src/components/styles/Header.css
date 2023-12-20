@@ -56,15 +56,15 @@ header{
 
 .links a{
   text-decoration: none;
-  color: aqua;
+  color:  #25e732;
   font-size: large;
   transition: 0.15s ease-in-out;
 }
 
 .links a:hover{
-  color: #3BB143;
+  color:  #cde9cf;
 }
 
 .links a:active{
-  color: chartreuse;
+  color: #cde9cf;
 }

@@ -1,7 +1,4 @@
-.main-header{
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
+
 
 .category-section{
     margin-top: 10px;
@@ -17,8 +14,7 @@
 
 .block-container{
     background-color: rgb(255, 255, 255);
-    max-width: 1200px;
-    width: 100%;
+    width: 90%;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -119,6 +115,7 @@
 
 .fish-text{
     font-size: 25px;
+    margin-bottom: 20px;
 }
 
 .beauty-text{

@@ -15,9 +15,9 @@ const Header = () => {
                     <ul>
                         <li className="links"><a href="/home">Home</a></li>
                         <li className="links"><a href="/shop">Categories</a></li>
-                        <li className="links"><a href="#">Packages</a></li>
-                        <li className="links"><a href="#">View Cart</a></li>
-                        <li className="links"><a href="#">Login</a></li>
+                        <li className="links"><a href="">Packages</a></li>
+                        <li className="links"><a href="/cart">View Cart</a></li>
+                        <li className="links"><a href="">Login</a></li>
                     </ul>
                 </div>
 

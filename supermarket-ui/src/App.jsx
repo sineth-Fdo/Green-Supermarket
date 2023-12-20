@@ -7,7 +7,8 @@ import Footer from './components/Footer'
 import { Manage } from './Pages/Manage'
 import Home from './Pages/Home'
 import Shop from './Pages/Shop'
-import ManageCategory from './Pages/ManageCategory'
+import Cart from './Pages/Cart'
+
 
 
 
@@ -25,7 +26,7 @@ function App() {
             <Route path="/home" element={<Home/>}/>
             <Route path="/shop" element={<Shop/>}/>
             <Route path="/manage" element={<Manage/>}/>
-            <Route path="/managecategory" element={<ManageCategory />}></Route>
+            <Route path="/cart" element={<Cart/>}/>
 
         </Routes>
     
