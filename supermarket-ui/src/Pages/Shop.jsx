@@ -1,4 +1,4 @@
-import React from 'react'
+
 import '../Pages/Page Styles/Shop.css'
 import ProductCard from '../components/ProductCard'
 
