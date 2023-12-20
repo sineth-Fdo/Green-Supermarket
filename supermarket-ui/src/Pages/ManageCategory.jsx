@@ -6,7 +6,7 @@ const ManageCategory = () => {
     <>
     <div className='category-page'>
       <div className='categroy-ui'>
-        <div className='page-back'>Manage Category</div>
+        <div className='page-back'>ManageCategory</div>
           <div className="btn-cat">
             <button className='button1'>Add</button>
             <button className='button2'>Manage Products</button>

@@ -17,12 +17,13 @@ function App() {
   return (
   <>
   
-<Header/>
+ <Header/>
 
     <BrowserRouter>
     
         <Routes>
             <Route path="/home" element={<Home/>}/>
+            <Route path="/shop" element={<Shop/>}/>
             <Route path="/manage" element={<Manage/>}/>
 <<<<<<< HEAD
             <Route path="/login" element={<Login/>}/>
