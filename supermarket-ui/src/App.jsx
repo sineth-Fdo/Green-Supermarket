@@ -26,7 +26,7 @@ function App() {
             <Route path="/shop" element={<Shop/>}/>
             <Route path="/manage" element={<Manage/>}/>
             <Route path="/managecategory" element={<ManageCategory />}></Route>
-            
+
         </Routes>
     
     </BrowserRouter>
