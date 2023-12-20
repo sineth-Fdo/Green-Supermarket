@@ -13,20 +13,20 @@ const Footer = () => {
                     <br /><br /> <span className="op-hours">Opening hours : 8.00am - 10.00pm</span>
                 </p>
                 <div className="social-links">
-                        <a href=""><i className="fab fa-facebook-f"></i></a>
-                        <a href=""><i className="fab fa-twitter"></i></a>
-                        <a href=""><i className="fab fa-instagram"></i></a>
-                        <a href=""><i className="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i className="fab fa-facebook-f"></i></a>
+                        <a href="#"><i className="fab fa-twitter"></i></a>
+                        <a href="#"><i className="fab fa-instagram"></i></a>
+                        <a href="#"><i className="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 
                 <div className="footer-col">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Our Services</a></li>
-                        <li><a href="">Privacy & Policy</a></li>
-                        <li><a href="">Affiliate Program</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Privacy & Policy</a></li>
+                        <li><a href="#">Affiliate Program</a></li>
                     </ul>
                 </div>
 
