@@ -7,7 +7,6 @@ import Footer from './components/Footer'
 import { Manage } from './Pages/Manage'
 import Home from './Pages/Home'
 import Shop from './Pages/Shop'
-import ManageCategory from './Pages/ManageCategory'
 
 
 
@@ -27,7 +26,6 @@ function App() {
         <Routes>
             <Route path="/home" element={<Home/>}/>
             <Route path="/manage" element={<Manage/>}/>
-            <Route path="/managecategory" element={<ManageCategory />}></Route>
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>
         </Routes>
