@@ -1,102 +1,21 @@
 .shop-container {
     width : 100%;
-    height: 100vh;
-    display: flex;
+    height: 100%;
    
 }
 
 
 .shop-hero {
-
+    border: 1px solid;
     width: 100%;
-    height: 100%;
-    overflow: auto;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px 0px 20px 0px;
-    background:rgba(210, 217, 11, 0.574);
-   
     
-}
-
-.shop-hero::-webkit-scrollbar {
-    width: 0px;
-}
-
-.sidebar-category {
-    border-right: 1px solid rgb(233, 233, 233);
-    height: 100vh;
-    width: 18%;
-    overflow: auto;
-    scroll-behavior: smooth;
-    background: #7df97f;
-}
-
-.sidebar-category::-webkit-scrollbar {
-    width: 0px;
-}
-
-.category-text-head {
-    font-size: 27px;
-    font-weight: 600;
-    color: rgb(69, 102, 59);
-    margin-bottom: 10px;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-
-
-.sidebar-category ul {
     
-    margin-left: 10px;
-    margin-top: 10px;
-    font-size: 15px;
-    font-weight: 600;
-    color: rgb(69, 102, 59);
+
 }
 
-.sidebar-category ul li {
-    margin-bottom: 10px;
-    margin-top: 10px;
-    list-style-type: none;
-    cursor: pointer;
-}
-.sidebar-category ul li:hover {
-    color: rgb(255, 255, 255);
-    transition: 0.1s;
-}
-
-.shop-top-image {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    background:url("public/foodBanner.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.shop-top-image::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.shop-top-image h1 {
-    font-size: 80px;
-    font-weight: 600;
-    color: rgb(255, 255, 255);
-    z-index: 1;
- 
-}
 
