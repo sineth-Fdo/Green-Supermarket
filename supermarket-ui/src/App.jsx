@@ -25,15 +25,7 @@ function App() {
             <Route path="/home" element={<Home/>}/>
             <Route path="/shop" element={<Shop/>}/>
             <Route path="/manage" element={<Manage/>}/>
-<<<<<<< HEAD
-            <Route path="/login" element={<Login/>}/>
-            <Route path="/register" element={<Register/>}/>
-=======
-            <Route path="/managecategory" element={<ManageCategory />}></Route>
-            <Route path="/shop" element={<Shop />}></Route>
-            {/* <Route path="/login" element={<Login/>}/> */}
-            {/* <Route path="/register" element={<Register/>}/> */}
->>>>>>> main
+
         </Routes>
     
     </BrowserRouter>
