@@ -1,4 +1,4 @@
-.login-page{
+.register-page{
     background-image: url("../public/vege-back2.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -10,7 +10,7 @@
     align-items: center;
 }
 
-.login-form-div{
+.register-form-div{
     /* background-color: black; */
     width: 100%;
     height: 700px;
@@ -19,7 +19,7 @@
     align-items: center;
 }
 
-.login-form{
+.register-form{
     background-color: rgba(255, 255, 255, 0.911);
     height: 100%;
     max-width: 1080px;
@@ -57,7 +57,7 @@
 }
 
 
-.login-input-form{
+.register-input-form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,9 +97,9 @@
     opacity: 0.75;
   }
 
-.login-btn{
+.register-btns{
     border: 0px;
-    width: 150px;
+    width: 200px;
     height: 40px;
     background-color: #13ac1d;
     color: white;
@@ -110,24 +110,36 @@
     
 }
 
-.login-btn:hover{
+.register-btns:hover{
     background-color: #13ac1d;
     opacity: 0.75;
 }
 
-.login-btn:active{
+.register-btns:active{
     background-color: #ffffff;
     border: 1px solid #13ac1d;
     color: #13ac1d;
     opacity: 0.75;
 }
 
-.login-space{
-    margin-top: 10px;
-}
 
-.register-tag{
+.login-tag{
     margin-top: 20px;  
 }
 
+.veri-space{
+    margin-top: 10px;
+
+}
+
+.verification-field{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    border: 1px solid #0000005b;
+    border-radius: 25px;
+    padding: 20px;
+}
 /* color #13ac1d*/

@@ -9,6 +9,7 @@ import Home from './Pages/Home'
 import Shop from './Pages/Shop'
 import Cart from './Pages/Cart'
 import Login from './Pages/Login'
+import Register from './Pages/Register'
 
 
 
@@ -24,6 +25,7 @@ function App() {
     
         <Routes>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/register" element={<Register/>}/>
             <Route path="/home" element={<Home/>}/>
             <Route path="/shop" element={<Shop/>}/>
             <Route path="/manage" element={<Manage/>}/>

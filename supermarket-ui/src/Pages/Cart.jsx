@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Pages/Page Styles/Cart.css'
-import { PayPalButton } from 'react-paypal-button-v2';
+// import { PayPalButton } from 'react-paypal-button-v2';
 
 const Cart = () => {
 
@@ -139,7 +139,7 @@ const Cart = () => {
                         </div>
                         <div className="paypal-container">
 
-                            <PayPalButton
+                            {/* <PayPalButton
                                 options={{
                                   clientId: 'AZ4Ynd7aORMUpAlxIQwxCGPS8EZp63V5svixPDIK-UiAMpbf7GqsxVB12IJ_NOY-wDu15akylqRtzKvj',
                                   currency: 'USD',
@@ -148,7 +148,7 @@ const Cart = () => {
                                 onSuccess={handleSuccess}
                                 onCancel={handleCancel}
                                 style={buttonStyle}
-                              />
+                              /> */}
                         </div>
                     </div>
                 </div>
