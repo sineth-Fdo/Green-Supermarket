@@ -9,11 +9,8 @@ import Home from './Pages/Home'
 import Shop from './Pages/Shop'
 import Cart from './Pages/Cart'
 import Login from './Pages/Login'
-<<<<<<< Updated upstream
 import Register from './Pages/Register'
-=======
 import ManageCategory from './Pages/ManageCategory'
->>>>>>> Stashed changes
 
 
 
