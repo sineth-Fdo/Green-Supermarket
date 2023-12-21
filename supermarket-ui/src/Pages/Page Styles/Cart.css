@@ -118,7 +118,7 @@
 }
 
 .checkout-btn {
-    width: 80%;
+    width: 400px;
     height: 50px;
     
     background-color: #13ac1d;
@@ -150,7 +150,7 @@
 }
 
 .paypal-container {
-    width: 70%;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
