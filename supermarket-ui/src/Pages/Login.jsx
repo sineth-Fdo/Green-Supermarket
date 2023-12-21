@@ -9,10 +9,11 @@ const Login = () => {
                         <img src="../public/hero2.jpg" alt="" className="div-img"/>
                     </div>
                     <div className="form-content">
-                        <form action="">
+                        <form action="" className="login-input-form">
                             <div className="form-title">
                                 <h1>Welcome to </h1>
                                 <h1><span className="green-text">Green</span> Supermarket</h1>
+                                <br />
                                 <p>Continue with your login credentials</p>
                             </div>
                             
@@ -26,7 +27,7 @@ const Login = () => {
                                 <input type="submit" value="Login" className="login-btn"/>
                             </div>
                             <div className="input-div register-tag">
-                                <p>Do not have an account? <a href="#">Register</a></p>
+                                <p>Do not have an account ? <a href="/register">Register</a></p>
                                 
                             </div>
                         </form>

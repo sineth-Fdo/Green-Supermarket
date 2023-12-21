@@ -54,7 +54,7 @@ header{
   
 }
 
-.links a{
+.links a, .divider-part{
   text-decoration: none;
   color:  #25e732;
   font-size: large;
