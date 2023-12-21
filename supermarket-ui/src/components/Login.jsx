@@ -1,9 +1,9 @@
-import React from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+// import React from 'react'
+// import { Navigate, useNavigate } from 'react-router-dom'
 
 const Login = () => {
 
- const navigator =  useNavigate();
+//  const navigator =  useNavigate();
 
   return (
     <div>

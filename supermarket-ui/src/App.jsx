@@ -8,7 +8,7 @@ import { Manage } from './Pages/Manage'
 import Home from './Pages/Home'
 import Shop from './Pages/Shop'
 import Cart from './Pages/Cart'
-
+import Login from './Pages/Login'
 
 
 
@@ -23,6 +23,7 @@ function App() {
     <BrowserRouter>
     
         <Routes>
+            <Route path="/login" element={<Login/>}/>
             <Route path="/home" element={<Home/>}/>
             <Route path="/shop" element={<Shop/>}/>
             <Route path="/manage" element={<Manage/>}/>
