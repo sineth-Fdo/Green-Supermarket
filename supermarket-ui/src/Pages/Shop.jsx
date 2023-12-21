@@ -2,7 +2,7 @@
 import '../Pages/Page Styles/Shop.css'
 import ProductCard from '../components/ProductCard'
 
-const Shop = () => {
+const Shop = () => { 
   return (
     <div className="shop-big-container">
         <div className="shop-top-container">
@@ -17,9 +17,8 @@ const Shop = () => {
                 <br /><br />
         </center>
         <div className='shop-container'>
-          
-          
-            
+
+  
               <div className="sidebar-category">
                   <h3 className='category-text-head'>Categories</h3>
                   <ul>

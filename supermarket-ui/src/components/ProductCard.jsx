@@ -14,7 +14,14 @@ const ProductCard = () => {
                     <span className="p-weight">100g</span>
                 </div>
                 <span className="p-price">RS 100</span>
-                <button className='p-addcart'>add to cart</button>
+                <div className="cartadd-hero">
+                    <div className="cart-qty-count">
+                        <button>+</button>
+                        <span className="p-quantity">1</span>
+                        <button>-</button>
+                    </div>
+                    <button className='p-addcart'>add to cart</button>
+                </div>
             </div>
         </div>
 

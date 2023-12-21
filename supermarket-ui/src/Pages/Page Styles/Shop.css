@@ -30,7 +30,7 @@
     width: 18%;
     overflow: auto;
     scroll-behavior: smooth;
-    background: #7df97f;
+    background: #13ac1d;
 }
 
 .sidebar-category::-webkit-scrollbar {
@@ -40,7 +40,7 @@
 .category-text-head {
     font-size: 30px;
     font-weight: 600;
-    color: rgb(69, 102, 59);
+    color: rgb(211, 247, 200);
     margin-bottom: 10px;
     margin-top: 10px;
     margin-left: 10px;
@@ -54,18 +54,21 @@
     margin-top: 10px;
     font-size: 15px;
     font-weight: 600;
-    color: rgb(69, 102, 59);
+    color: rgb(211, 247, 200);
 }
 
 .sidebar-category ul li {
     margin-bottom: 10px;
     margin-top: 10px;
+    margin-bottom: 17px;
     list-style-type: none;
     cursor: pointer;
+    transition: 0.1s;
 }
 .sidebar-category ul li:hover {
-    color: rgb(255, 255, 255);
-    transition: 0.1s;
+    color:#ffffff;
+    padding-left: 10px;
+    transition: 0.5s;
 }
 
 .shop-top-image {

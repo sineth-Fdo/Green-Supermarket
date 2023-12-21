@@ -1,7 +1,10 @@
 
-
+.main-header {
+    margin-top: 80px;
+}
 .category-section{
     margin-top: 10px;
+    margin-bottom: 5%;
     background-color: rgb(255, 255, 255);
     width: 100%;
     height: 500px;
@@ -10,6 +13,27 @@
     justify-content: center;
     align-items: center;
     
+}
+.category-more-hero {
+  
+    width: 89%;
+    padding: 20px 0px 20px 0px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    
+}
+
+.category-more{
+    color: rgb(44, 165, 8);
+    cursor:pointer;
+    transition: 0.3s;
+}
+.category-more:hover {
+    color: rgb(0, 0, 0);
+    margin-right: 5px;
+    transition: 0.5s;
+
 }
 
 .block-container{
