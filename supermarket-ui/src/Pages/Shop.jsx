@@ -18,7 +18,7 @@ const Shop = () => {
         </center>
         <div className='shop-container'>
 
-  
+
               <div className="sidebar-category">
                   <h3 className='category-text-head'>Categories</h3>
                   <ul>
