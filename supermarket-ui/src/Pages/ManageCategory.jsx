@@ -1,10 +1,14 @@
 import React from 'react'
 import './Page Styles/ManageCategory.css'
+import { useNavigate } from 'react-router-dom'
 
 const ManageCategory = () => {
+
+  const navigate = useNavigate()
+
   return (
     <div className='category-page'>
-      <h3 className='back-manage'>{"<< Back"}</h3>
+      <h3  className='back-manage' onClick={() => {navigate('/manage')}}>{"<< Back"}</h3>
       <div className='category-ui'>
         <h1>ManageCategory</h1>
             <div className="btn-cat">
