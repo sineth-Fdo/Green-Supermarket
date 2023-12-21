@@ -33,20 +33,9 @@ const Register = () => {
                                 <input type="password" placeholder="Confirm Password" className="text-fields"/>
                             </div>
                             <div className="input-div veri-space">
-                                <input type="submit" value="Verification Code" className="register-btns"/>
+                                <input type="submit" value="Register" className="register-btns"/>
                             </div>
-
-                            
-
-                            <div className="verification-field">
-                                <div className="input-div">
-                                    <input type="text" placeholder="Enter the Verification code" className="text-fields"/>
-                                </div>
-                                <div className="input-div ">
-                                    <input type="submit" value="Register" className="register-btns"/>
-                                </div>
                                 
-                            </div>
                             <div className="input-div login-tag">
                                     <p>Your already have an account ? <a href="/login">Log In</a></p>
                             </div>
