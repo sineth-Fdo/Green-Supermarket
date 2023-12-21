@@ -12,6 +12,8 @@ import Login from './Pages/Login'
 import Register from './Pages/Register'
 import ManageCategory from './Pages/ManageCategory'
 import ViewProduct from './Pages/ViewProduct'
+import ViewOrders from './Pages/ViewOrders'
+import AddProduct from './Pages/AddProduct'
 
 
 
@@ -21,7 +23,7 @@ function App() {
   return (
   <>
   
- <Header/>
+<Header/>
 
     <BrowserRouter>
     
@@ -34,6 +36,8 @@ function App() {
             <Route path="/manage" element={<Manage/>}/>
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/managecategory" element={<ManageCategory/>}/>
+            <Route path="/order" element={<ViewOrders/>}/>
+            <Route path="/addProduct" element={<AddProduct/>}/>
         </Routes>
     
     </BrowserRouter>
