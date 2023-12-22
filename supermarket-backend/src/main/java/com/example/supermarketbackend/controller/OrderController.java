@@ -46,6 +46,11 @@ public class OrderController {
         return new ResponseEntity<>("Order Cancelled", HttpStatus.OK);
     }
 
+    @DeleteMapping("delete/{id}")
+    public ResponseEntity<?> DeleteOrderById(@PathVariable Long id) {
+        this.orderService.DeleteOrder(Math.toIntExact(id));
+        return new ResponseEntity<>("Order Cancelled", HttpStatus.OK);
+    }
 
 
     // Get all orders summary

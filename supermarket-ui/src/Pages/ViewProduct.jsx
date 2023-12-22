@@ -56,6 +56,7 @@ const ViewProduct = () => {
   
         const responseData = await res.json();
        alert('Product added to cart successfully!', responseData);
+       navigate(`/shop/${product.category.name}`, { state:  { customerId: `${customerId}` }  });
       } catch (error) {
         console.error('Error adding to cart:', error.message);
       }
