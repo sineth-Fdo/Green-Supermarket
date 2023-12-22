@@ -133,7 +133,8 @@ const Shop = () => {
           <ul>
             {allCategoryNames.map((categoryName, index) => (
               <li key={index} onClick={() => handleCategoryClick(categoryName)}>
-                {categoryName}
+               <span style={{ marginRight: '10px' }}>{' > '}</span> 
+               {categoryName}
               </li>
             ))}
           </ul>

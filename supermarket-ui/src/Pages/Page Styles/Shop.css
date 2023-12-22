@@ -62,12 +62,13 @@
     margin-top: 10px;
     margin-bottom: 17px;
     list-style-type: none;
+    font-size: 20px;
     cursor: pointer;
     transition: 0.1s;
 }
 .sidebar-category ul li:hover {
     color:#ffffff;
-    padding-left: 10px;
+    padding-left: 5px;
     transition: 0.5s;
 }
 

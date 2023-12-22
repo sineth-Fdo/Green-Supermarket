@@ -97,6 +97,7 @@ const Cart = () => {
       if (response.status === 500) {
         // Order created successfully, show an alert
         alert('Order placed successfully!');
+       
 
         // Optionally, you can navigate the user to a confirmation page or update the UI accordingly
       } else {
@@ -105,29 +106,14 @@ const Cart = () => {
     } catch (error) {
       console.error('Error placing order:', error);
     }
+
+    navigate(`/pay/${CID}`);
   };
 
   // Calculate the total price
   const totalAmount = cartItems.reduce((acc, cartItem) => acc + cartItem.totalPrice, 0);
 
-  const buttonStyle = {
-    width: '50%',
-    color: 'white',
-    background: '#007bff',
-    padding: '10px 20px',
-    borderRadius: '20px',
-    cursor: 'pointer',
-  };
-
-  const handleSuccess = (details, data) => {
-    alert('Transaction completed by ' + details.payer.name.given_name);
-    console.log(details, data);
-  };
-
-  const handleCancel = (data) => {
-    alert('Payment canceled');
-    console.log(data);
-  };
+ 
 
   return (
     <div className='cart-big-container'>
@@ -160,7 +146,7 @@ const Cart = () => {
                 <div className="col col-3" data-label="Price">Rs. {cartItem.product.price}</div>
                 <div className="col col-4" data-label="Quantity">{cartItem.quantity}</div>
                 <div className="col col-5" data-label="Total">Rs. {cartItem.totalPrice}</div>
-                <div className="col col-6" onClick={() => handleDeleteCartItem(cartItem.id)}>X</div>
+                <div class="col col-6" className='delete-cross' onClick={() => handleDeleteCartItem(cartItem.id)}>X</div>
               </li>
             ))}
           </ul>
@@ -206,44 +192,6 @@ const Cart = () => {
         </div>
       </div>
 
-      {/* order container */}
-
-      {/* <div className="order-container">
-        <div className="cart-right-container">
-          <div className="top-hero">
-            <div className='total-up'>
-              <p>Subtotal</p>
-              <p>Rs. {totalAmount}</p>
-            </div>
-            <div className='total-up'>
-              <p>Payment Status</p>
-              <p>pend</p>
-            </div>
-            <div className='total-up'>
-              <p>Billing Address</p>
-              <p>312,podiweekubura,ragama</p>
-            </div>
-          </div>
-          <div className="bottom-hero">
-            <div className='total-up'>
-              <h1>Total</h1>
-              <h2>Rs. {totalAmount}</h2>
-            </div>
-            <div className="paypal-container">
-              PayPalButton
-                options={{
-                  clientId: 'AZ4Ynd7aORMUpAlxIQwxCGPS8EZp63V5svixPDIK-UiAMpbf7GqsxVB12IJ_NOY-wDu15akylqRtzKvj',
-                  currency: 'USD',
-                }}
-                amount="100.00"
-                onSuccess={handleSuccess}
-                onCancel={handleCancel}
-                style={buttonStyle}
-
-            </div>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };

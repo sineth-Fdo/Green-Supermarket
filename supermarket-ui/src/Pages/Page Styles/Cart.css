@@ -158,3 +158,10 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.delete-cross {
+    font-size: 26px;
+    cursor: pointer;
+    color: red;
+    font-weight: 600;
+}
