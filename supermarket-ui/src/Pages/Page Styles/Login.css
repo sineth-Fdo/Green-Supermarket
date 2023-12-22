@@ -92,7 +92,7 @@
     
 }
 
-::placeholder {
+.text-fields::placeholder {
     color: #13ac1d;
     opacity: 0.75;
   }
