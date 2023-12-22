@@ -13,6 +13,6 @@ public interface ProductService {
     ProductDto addProductWithCategory(ProductDto productDto);
     void deleteById(Long id);
     ProductDto addProductToCart(Long productId, Long customerId, int quantity);
-    Category getCategoryById(Long categoryId);
-    List<ProductDto> getProductsByCategoryId(Long categoryId);
+
+    List<ProductDto> getProductsByCategoryName(String categoryName);
 }

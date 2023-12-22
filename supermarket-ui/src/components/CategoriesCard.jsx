@@ -1,7 +1,7 @@
 import "./styles/CategoriesCard.css"
 import  {useNavigate} from "react-router-dom";
 
-const CategoriesCard = () =>{
+const CategoriesCard = (props) =>{
 
     const navigate = useNavigate();
 
@@ -9,12 +9,13 @@ const CategoriesCard = () =>{
         <div className="category-section">
             <br /><br />
             <h1 className="main-header">Popular Categories</h1>
+            <h2>{props.customerId}</h2>
         <div className="category-more-hero">
             <h3 className="category-more"  onClick={() => {navigate('/shop')}}>See more {'>>'}</h3>
         </div>
             <div className="block-container">
                 
-                <div className="left-most-div common" onClick={() => {navigate('/shop')}}>
+                <div className="left-most-div common" onClick={() => { navigate('/shop/fruits', { state: { customerId: props.customerId } });}}>
                     <img src="public\snacks.png" alt="snacks image" className="snacks-img"/>
                     <h3 className="snacks-text">Snacks</h3>
                 </div>
@@ -29,7 +30,7 @@ const CategoriesCard = () =>{
                     </div>
                 </div>
                 <div className="right-block">
-                    <div className="left-cate common"  onClick={() => {navigate('/shop')}}>
+                    <div className="left-cate common"  onClick={() => {navigate('/shop/vegetables')}}>
                         <img src="public\caba.png" alt="Cabbage" className="vege-img"/>
                         <h3 className="vege-text">Vegetables</h3>
                     </div>

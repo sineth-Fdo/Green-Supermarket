@@ -11,6 +11,7 @@
 }
 
 .back-manage {
+    width: 100px;
     color: #fff;
     margin-left: 30px;
     cursor: pointer;

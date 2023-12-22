@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="container-footer">
             <div className="row">
                 <div className="footer-col">
-                <img src="./public/logo3.png" alt="logo" className="logo"/>
+                <img src="../public/logo3.png" alt="logo" className="logo"/>
                 <p className="disc">Explore a world of freshness and savings at our supermarket. Discover quality products, unbeatable prices, and exceptional service for a delightful shopping experience.Shop with us today!
                     <br /><br /> <span className="op-hours">Opening hours : 8.00am - 10.00pm</span>
                 </p>
@@ -33,20 +33,20 @@ const Footer = () => {
                 <div className="footer-col">
                     <h4>Help</h4>
                     <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Shipping</a></li>
-                        <li><a href="#">Returns</a></li>
-                        <li><a href="#">Order Details</a></li>
+                        <li><a href="">FAQ</a></li>
+                        <li><a href="">Shipping</a></li>
+                        <li><a href="">Returns</a></li>
+                        <li><a href="">Order Details</a></li>
                     </ul>
                 </div>
 
                 <div className="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="#">Gampaha Branch</a></li>
-                        <li><a href="#">Kandana Branch</a></li>
-                        <li><a href="#">Ragama Branch</a></li>
-                        <li><a href="#">Homagama Branch</a></li>
+                        <li><a href="">Gampaha Branch</a></li>
+                        <li><a href="">Kandana Branch</a></li>
+                        <li><a href="">Ragama Branch</a></li>
+                        <li><a href="">Homagama Branch</a></li>
                     </ul>
                     
                 </div>

@@ -6,7 +6,7 @@
     background: rgb(188, 245, 176);
     background: linear-gradient(0deg, rgb(209, 255, 200) 0%, rgb(179, 255, 156) 3%, rgb(195, 255, 180) 9%, rgb(180, 255, 177) 25%, rgb(255, 255, 255) 77%);
     width: 270px;
-    height: auto;
+    height: 340px;
     display:flex;
     flex-direction: column;
     justify-content: space-around;
@@ -94,7 +94,7 @@
 }
 
 .p-addcart:hover {
-    padding: 10px 40px 10px 40px;
+    background: #2f912f;
     transition: 0.2s;
 }
 .p-addcart:active {
