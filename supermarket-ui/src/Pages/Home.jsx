@@ -1,8 +1,13 @@
 import CategoriesCard from "../components/CategoriesCard";
 import HomeItemCard from "../components/HomeItemCard";
 import "./Page Styles/Home.css"
+import { useLocation } from 'react-router-dom';
 
 const Home = () => {
+
+    const location = useLocation();
+    const responseId = location.state && location.state.response;
+
     return(
 
         <div className="home-div">
@@ -11,12 +16,14 @@ const Home = () => {
                     <div className="hero-content">
                         <h1>Welcome to Green Supermarket</h1>
                         <p>Best place to buy your groceries</p>
+                        <p>{responseId}</p>
+                
                     </div>
                 </div>
             </div>
 
             <div className="popular-vege">
-                <CategoriesCard />
+                <CategoriesCard customerId = {responseId} />
                 
             </div>
 

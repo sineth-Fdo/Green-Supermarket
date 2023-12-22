@@ -106,7 +106,7 @@ public class ProductController {
 
     @PutMapping("update/{id}")
     public ResponseEntity<ProductDto> updateProductWithCategory(@RequestBody ProductDto productDto, @PathVariable Long id) {
-        // Assuming you have a service variable named productService
+
         Long categoryId = (productDto.getCategory() != null) ? productDto.getCategory().getId() : null;
 
         ProductDto updatedProduct = productService.updateProduct(productDto, id, categoryId);
@@ -130,11 +130,11 @@ public class ProductController {
         return ResponseEntity.ok(updatedProduct);
     }
 
-    // Get all products by category ID
-    @GetMapping("/category/{categoryId}")
-    public ResponseEntity<List<ProductDto>> getProductsByCategoryId(@PathVariable Long categoryId) {
+    // Get all products by category name
+    @GetMapping("/category/{categoryName}")
+    public ResponseEntity<List<ProductDto>> getProductsByCategoryName(@PathVariable String categoryName) {
         try {
-            List<ProductDto> products = productService.getProductsByCategoryId(categoryId);
+            List<ProductDto> products = productService.getProductsByCategoryName(categoryName);
             return new ResponseEntity<>(products, HttpStatus.OK);
         } catch (ResourceNotFoundException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

@@ -7,6 +7,42 @@
     align-items: center;
 }
 
+.back-text-shop {
+    font-size: 20px;
+    font-weight: 600;
+    color: #13ac1d;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    position: absolute;
+    left: 0;
+    margin-left: 30px;
+
+    cursor: pointer;
+
+}
+
+.back-text-shop:hover{
+    color: #073d0b;
+}
+
+.text-cart {
+    font-size: 20px;
+    font-weight: 600;
+    color: #13ac1d;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+
+    cursor: pointer;
+
+}
+
+.text-cart:hover{
+    color: #073d0b;
+}
+
 .product-div{
     /* background-color: black; */
     max-width: 1300px;
