@@ -1,8 +1,14 @@
+.pay-big-container {
+    background: #93ef99;
+}
+
 .pay-container {
     background: #93ef99;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    display: flex;
+    flex-direction:column-reverse;
 }
 
 

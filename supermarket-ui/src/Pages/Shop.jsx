@@ -78,6 +78,10 @@ const Shop = () => {
 
   // add product to cart
   const addProductToCart = async (productId, quantity) => {
+    if (!customerId) {
+      alert('Please login to add products to cart!');
+      return;
+    }
     const apiUrl = 'http://localhost:8080/api/products/add-to-cart';
 
     const requestBody = {
@@ -115,7 +119,15 @@ const Shop = () => {
         <div className="shop-top-image">
          <h1>{selectedCategory ? selectedCategory.toUpperCase() : 'ALL PRODUCTS'}</h1>
         </div>
-        <p className="text-cart"onClick={() => {navigate(`/cart/${customerId}`);}}>View Cart{' >> '}</p>
+
+        {
+          customerId ? (
+            <p className="text-cart" onClick={() => {navigate(`/cart/${customerId}`);}}>View Cart{' >> '}</p>
+          ) : (
+            <p className="text-cart" onClick={() => {navigate('/login');}}>Login to View Cart{' >> '}</p>
+          )
+        }
+      
       </div>
          
       <center>

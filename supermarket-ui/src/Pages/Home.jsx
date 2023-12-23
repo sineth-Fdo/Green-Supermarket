@@ -28,7 +28,7 @@ const Home = () => {
             </div>
 
             <div className="popular-cate">
-                <HomeItemCard/>
+                <HomeItemCard customerId = {responseId}/>
             </div>
 
         </div>

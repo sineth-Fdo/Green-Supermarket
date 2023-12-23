@@ -14,25 +14,23 @@ import java.util.UUID;
 @Service
 public class FileUpload {
 
-    public  String uploadImage(String path, MultipartFile file) throws IOException {
+    public String uploadImage(String path, MultipartFile file) throws IOException {
+        String originalFilename = file.getOriginalFilename();
+        String randomImageName = UUID.randomUUID().toString();
 
-        String originslFilename = file.getOriginalFilename();
-        String randomImagename = UUID.randomUUID().toString();
+        String randomImageNameWithExtension = randomImageName.concat(originalFilename.substring(originalFilename.lastIndexOf(".")));
 
-        String randomImageNameWithExtention =   randomImagename.concat(originslFilename.substring(originslFilename.lastIndexOf(".")));
-
-        String fullpath =path+ File.separator+randomImageNameWithExtention;
+        String fullPath = path + File.separator + randomImageNameWithExtension;
         File folderFile = new File(path);
 
         if (!folderFile.exists()) {
             folderFile.mkdirs();
-
         }
 
         try {
-            Files.copy(file.getInputStream(), Paths.get(fullpath));
-            return randomImageNameWithExtention;
-        } catch (IIOException e) {
+            Files.copy(file.getInputStream(), Paths.get(fullPath));
+            return randomImageNameWithExtension;
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return null;

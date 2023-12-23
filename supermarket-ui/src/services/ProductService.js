@@ -19,12 +19,14 @@ export const getProductsByCategory = (categoryName) => {
 export const getProductById = (id) => axios.get(`${BASE_REST_API_URL}/${id}`);
 
 export const uploadProductImage = (id, file) => {
-    const formData = new FormData();
-    formData.append("file", file);
-  
-    return axios.post(`${BASE_REST_API_URL}/images/${id}`, formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
-  };
+  // Create FormData object to send file data
+  const formData = new FormData();
+  formData.append("file", file);
+
+  // Make a POST request with the FormData
+  return axios.post(`${BASE_REST_API_URL}/imagePid/${id}`, formData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+};

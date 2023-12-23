@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import '../Pages/Page Styles/PayOrder.css';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { PayPalButton } from 'react-paypal-button-v2';
 
 const PayOrder = () => {
   const { CID } = useParams();
   const [orders, setOrders] = useState([]);
+  const navigate = useNavigate();
+
+
+  
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -33,17 +37,57 @@ const PayOrder = () => {
     cursor: 'pointer',
   };
 
-  const handleSuccess = (details, data) => {
-    alert('Transaction completed by ' + details.payer.name.given_name);
-    console.log(details, data);
+  const handleSuccess = async (details, data) => {
+    try {
+      const orderId = orders[0].orderId; 
+      const customerId = CID;
+      await updatePaymentStatus(orderId, 'paid');
+  
+     
+      alert('Transaction completed by ' + details.payer.name.given_name);
+      await deleteCartItemsByCustomerId(customerId);
+      console.log(details, data);
+  
+  
+      const updatedOrders = orders.map((order) =>
+        order.orderId === orderId ? { ...order, paymentStatus: 'paid' } : order
+      );
+      setOrders(updatedOrders);
+    } catch (error) {
+      console.error('Error updating payment status:', error.message);
+    }
   };
+  
+  
 
   const handleCancel = async (data) => {
     alert('Payment canceled');
-    console.log(data);
+    const customerId = CID;
+    await deleteCartItemsByCustomerId(customerId);
+    
 
-    // Call the function to cancel the order and delete cart items
-    await cancelOrderAndDeleteCartItems();
+
+
+  };
+
+  const updatePaymentStatus = async (orderId, status) => {
+    try {
+      const response = await fetch(`http://localhost:8080/api/order/up/${orderId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ paymentStatus: status }),
+      });
+
+      if (response.ok) {
+        console.log('Payment status updated successfully');
+      } else {
+        console.error('Failed to update payment status');
+      }
+    } catch (error) {
+      console.error('Error updating payment status:', error.message);
+    }
   };
 
   const cancelOrderById = async (orderId) => {
@@ -96,13 +140,14 @@ const PayOrder = () => {
   };
 
   return (
-    <div className='pay-container'>
+    <div className='pay-big-container'>
       <center>
         <br />
         <br />
         <h1>Your Order is successfully Placed</h1>
         <br /><br />
       </center>
+    <div className='pay-container'>
 
       {orders.map((order) => (
         <div key={order.orderId} className="order-container">
@@ -126,25 +171,45 @@ const PayOrder = () => {
                 <h1>Total</h1>
                 <h2>Rs. {order.orderAmount} </h2>
               </div>
+
+              {order.paymentStatus === 'pending'  && (
+                <>
+
               <div className="paypal-container">
                 <PayPalButton
                   options={{
                     clientId: 'AZ4Ynd7aORMUpAlxIQwxCGPS8EZp63V5svixPDIK-UiAMpbf7GqsxVB12IJ_NOY-wDu15akylqRtzKvj',
                     currency: 'USD',
                   }}
-                  amount="100.00"
+                  amount={order.orderAmount}
                   onSuccess={handleSuccess}
                   onCancel={handleCancel}
                   style={buttonStyle}
                 />
               </div>
+                </>
+              )
+              
+              }
             </div>
+            {order.paymentStatus === 'pending'? (
+              <>
             <button className='cancel-pay-btn' onClick={handleCancel}>
               Cancel
             </button>
+              </>
+            ):(
+              <>
+               <button className='cancel-pay-btn' onClick={() => {navigate(`/shop/vegetables`, { state:  { customerId: `${CID}` }  })}}>
+                  Shop
+            </button>
+              </>
+            )}
+
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 };

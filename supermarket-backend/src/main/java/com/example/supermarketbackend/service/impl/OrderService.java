@@ -116,6 +116,25 @@ public class OrderService {
 //        this.orderRepository.delete(order);
     }
 
+
+    public void UpdateOrder(int orderId) {
+        Order order = this.orderRepository.findById(orderId).orElseThrow(() -> new ResourceNotFoundException("Order not found"));
+
+
+        Cart cart = order.getCustomer().getCart();
+        if (cart != null) {
+            cart.getCartItems().clear();
+
+            order.getCustomer().setCart(null);
+            this.cartRepository.save(cart);
+        }
+
+        // Update order status to "cancelled"
+        order.setPaymentStatus("Paid");
+        this.orderRepository.save(order);
+
+    }
+
     // Cancel order with clearing the cart
     public void DeleteOrder(int orderId) {
         Order order = this.orderRepository.findById(orderId).orElseThrow(() -> new ResourceNotFoundException("Order not found"));

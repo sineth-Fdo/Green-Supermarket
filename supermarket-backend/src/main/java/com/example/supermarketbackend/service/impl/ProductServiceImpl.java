@@ -172,6 +172,15 @@ public class ProductServiceImpl implements ProductService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public ProductDto getProductByName(String productName) {
+        Product product = (Product) productRepository.findByName(productName)
+                .orElseThrow(() -> new ResourceNotFoundException("Product not found with name: " + productName));
+
+        return modelMapper.map(product, ProductDto.class);
+    }
+
+
     private Category getCategoryByName(String categoryName) {
         return categoryRepository.findByName(categoryName)
                 .orElseThrow(() -> new ResourceNotFoundException("Category not found with name: " + categoryName));

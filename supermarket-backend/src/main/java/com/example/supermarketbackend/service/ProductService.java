@@ -15,4 +15,6 @@ public interface ProductService {
     ProductDto addProductToCart(Long productId, Long customerId, int quantity);
 
     List<ProductDto> getProductsByCategoryName(String categoryName);
+
+    ProductDto getProductByName(String productName);
 }
