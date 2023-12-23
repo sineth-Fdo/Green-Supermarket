@@ -52,6 +52,11 @@ public class OrderController {
         return new ResponseEntity<>("Order Cancelled", HttpStatus.OK);
     }
 
+    @PutMapping("up/{id}")
+    public ResponseEntity<?> UpdateOrderById(@PathVariable Long id) {
+        this.orderService.UpdateOrder(Math.toIntExact(id));
+        return new ResponseEntity<>("Order Cancelled", HttpStatus.OK);
+    }
 
     // Get all orders summary
     @GetMapping("/all")

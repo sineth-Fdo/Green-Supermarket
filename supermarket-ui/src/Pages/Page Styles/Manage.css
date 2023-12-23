@@ -37,7 +37,7 @@
     margin-right: 8px;
 }
 
-.btn1, .btn2, .btn3 {
+.btn1, .btn2, .btn3, .btn4  {
     appearance: none;
     backface-visibility: hidden;
     background-color: #13ac1d;
@@ -59,6 +59,11 @@
     position: relative;
     text-align: center;
     text-decoration: none;
+}
+
+.btn4 {
+    background-color: #e74c3c;
+
 }
 
 .table-manage {

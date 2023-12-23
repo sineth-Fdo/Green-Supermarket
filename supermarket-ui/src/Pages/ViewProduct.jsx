@@ -73,7 +73,15 @@ const ViewProduct = () => {
         <div className="viewproduct-div">
             <div className="product-div">
             <p className="back-text-shop" onClick={() => {navigate(`/shop/${product.category.name}`, { state:  { customerId: `${customerId}` }  })}}>{'<< '}Back to Shop</p>
-                     <p className="text-cart"onClick={() => {navigate(`/cart/${customerId}`);}}>View Cart{' >> '}</p>
+            {
+                customerId ? (
+                  <p className="text-cart" onClick={() => {navigate(`/cart/${customerId}`);}}>View Cart{' >> '}</p>
+                ) : (
+                  <p className="text-cart" onClick={() => {navigate('/login');}}>Login to View Cart{' >> '}</p>
+                )
+            }
+                  
+                 
                 <div className="upper-div">
                     <h1>Product Details</h1>
                     <p>Product ID: {id}</p>

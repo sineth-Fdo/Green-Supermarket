@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../components/styles/ProductCard.css';
 import { useNavigate } from 'react-router-dom';
 
 const ProductCard = ({ product, onAddToCart, quantityMap, setQuantityMap, customerId }) => {
   const [quantity, setQuantity] = useState(quantityMap[product.id] || 1);
   const navigate = useNavigate();
+
+
+
 
   const handleDecrease = () => {
     setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));

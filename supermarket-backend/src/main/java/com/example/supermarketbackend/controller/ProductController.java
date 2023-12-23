@@ -33,8 +33,8 @@ public class ProductController {
     private FileUpload fileUpload;
 
 
-    //Upload a image
-    @PostMapping("/images/{id}")
+    // upload image use id
+    @PostMapping("/imagePid/{id}")
     public ResponseEntity<?> uploadImageProduct(@PathVariable Long id, @RequestParam("file") MultipartFile file) {
 
         ProductDto product = productService.getProductById(id);
@@ -42,7 +42,6 @@ public class ProductController {
         String imageName = null;
 
         try {
-//          String uploadImage =  fileUpload.uploadImage("supermarket-ui/public/images/", file);
             String uploadImage =  fileUpload.uploadImage("supermarket-ui/public/images/", file);
             product.setImage(uploadImage);
             ProductDto updateProduct =   productService.updateProduct(product, id, product.getCategory().getId());
@@ -57,31 +56,30 @@ public class ProductController {
 
     }
 
-    //download a image
-    @GetMapping("/images/download/{id}")
-    public ResponseEntity<InputStreamResource> downloadImageProduct(@PathVariable Long id) {
-        ProductDto product = productService.getProductById(id);
+
+
+// Upload an image using product name
+    @PostMapping("/images/{productName}")
+    public ResponseEntity<?> uploadImageProduct(@PathVariable String productName, @RequestParam("file") MultipartFile file) {
+        ProductDto product = productService.getProductByName(productName);
+
+        if (product == null) {
+            return new ResponseEntity<>(Map.of("message", "Product not found"), HttpStatus.NOT_FOUND);
+        }
 
         try {
-            String imagePath = "supermarket-ui/public/images/" + product.getImage();
-            File file = new File(imagePath);
+            String uploadImage = fileUpload.uploadImage("supermarket-ui/public/images/", file);
+            product.setImage(uploadImage);
 
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.IMAGE_JPEG);
-            headers.setContentDispositionFormData("attachment", file.getName());
+            ProductDto updateProduct = productService.updateProduct(product, product.getId(), product.getCategory().getId());
 
-            InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
-
-            return ResponseEntity.ok()
-                    .headers(headers)
-                    .body(resource);
+            return new ResponseEntity<>(updateProduct, HttpStatus.ACCEPTED);
 
         } catch (IOException e) {
             e.printStackTrace();
-            return ResponseEntity.status(500).body(null);
+            return new ResponseEntity<>(Map.of("message", "File not uploaded on the server"), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
 
     @GetMapping
     private ResponseEntity<List<ProductDto>> getAllProducts() {
