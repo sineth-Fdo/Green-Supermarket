@@ -5,7 +5,7 @@ const AddProduct = () => {
     <div className="add-product-div">
       <div className='product-add-sec'>
         <div className='form-div'>
-          <form action="" className='product-form'>
+          <div className='product-form'>
               <center>
                 <h1 className='form-title'>Add Product</h1>
               </center>
@@ -40,7 +40,7 @@ const AddProduct = () => {
               <div className='text-input-sections'>
                 <button className='submit-btn btn-style'>Submit</button>
               </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
