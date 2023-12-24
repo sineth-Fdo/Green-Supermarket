@@ -38,7 +38,9 @@ const ProductCard = ({ product, onAddToCart, quantityMap, setQuantityMap, custom
         <div className="p-name-wrap">
           <h1 className="p-name">{product.name}</h1>
           <p>{customerId}</p>
-          <span className="p-weight">100 kg</span>
+          <span className="p-weight">{
+                        product.category.name === "snacks"|| product.category.name ==="beauty products" ?
+                                                                                 "1 Pack" : "100 g"}</span>
         </div>
         <span className="p-price">{`RS ${product.price}`}</span>
         <div className="cartadd-hero">

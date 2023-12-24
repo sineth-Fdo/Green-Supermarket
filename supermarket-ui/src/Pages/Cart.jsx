@@ -134,7 +134,7 @@ const Cart = () => {
               <div className="col col-3">Price</div>
               <div className="col col-4">Quantity</div>
               <div className="col col-5">Total</div>
-              <div className="col col-6">Action</div>
+        
             </li>
 
             {cartItems.map((cartItem) => (
