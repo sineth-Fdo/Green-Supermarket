@@ -39,22 +39,41 @@ const PayOrder = () => {
 
   const handleSuccess = async (details, data) => {
     try {
-      const orderId = orders[0].orderId; 
+      const orderId = orders[0].orderId;
+      await updatePaymentStatus(orderId, 'Paid');
       const customerId = CID;
-      await updatePaymentStatus(orderId, 'paid');
-  
-     
+      
+ 
       alert('Transaction completed by ' + details.payer.name.given_name);
       await deleteCartItemsByCustomerId(customerId);
       console.log(details, data);
   
   
       const updatedOrders = orders.map((order) =>
-        order.orderId === orderId ? { ...order, paymentStatus: 'paid' } : order
+        order.orderId === orderId ? { ...order, paymentStatus: 'Paid' } : order
       );
       setOrders(updatedOrders);
     } catch (error) {
       console.error('Error updating payment status:', error.message);
+    }
+  };
+
+  // delete order by id
+  const deleteOrder = async (orderId) => {
+    try {
+      
+      const response = await fetch(`http://localhost:8080/api/order/delete/${orderId}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+      
+        fetchOrders();
+      } else {
+        console.error('Error deleting order:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error deleting order:', error);
     }
   };
   
@@ -62,9 +81,19 @@ const PayOrder = () => {
 
   const handleCancel = async (data) => {
     alert('Payment canceled');
+  
+    
+
+  };
+
+
+  const handleCancelBtn = async (data) => {
+    const orderId = orders[0].orderId;
+    alert('Payment canceled');
     const customerId = CID;
     await deleteCartItemsByCustomerId(customerId);
-    
+    deleteOrder(orderId)
+    navigate(`/shop/vegetables`, { state:  { customerId: `${CID}` }  })
 
 
 
@@ -98,7 +127,7 @@ const PayOrder = () => {
 
       if (response.ok) {
         console.log('Order canceled successfully');
-        // Optionally, you can update the UI or navigate the user to a confirmation page
+       
       } else {
         console.error('Failed to cancel order');
       }
@@ -194,7 +223,7 @@ const PayOrder = () => {
             </div>
             {order.paymentStatus === 'pending'? (
               <>
-            <button className='cancel-pay-btn' onClick={handleCancel}>
+            <button className='cancel-pay-btn' onClick={handleCancelBtn}>
               Cancel
             </button>
               </>
