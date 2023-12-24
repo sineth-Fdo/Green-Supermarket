@@ -6,8 +6,27 @@ import { PayPalButton } from 'react-paypal-button-v2';
 const PayOrder = () => {
   const { CID } = useParams();
   const [orders, setOrders] = useState([]);
+  const [customerEmail, setCustomerEmail] = useState('');
   const navigate = useNavigate();
 
+
+
+  useEffect(() => {
+    const fetchCustomerData = async () => {
+      try {
+        const customerResponse = await fetch(`http://localhost:8080/api/customer/get/${CID}`);
+        if (!customerResponse.ok) {
+          throw new Error('Failed to fetch customer data');
+        }
+        const customerData = await customerResponse.json();
+        setCustomerEmail(customerData.email);
+      } catch (error) {
+        console.error('Error fetching customer data:', error.message);
+      }
+    };
+
+    fetchCustomerData();
+  }, [CID]);
 
   
 
@@ -42,21 +61,29 @@ const PayOrder = () => {
       const orderId = orders[0].orderId;
       await updatePaymentStatus(orderId, 'Paid');
       const customerId = CID;
-      
- 
-      alert('Transaction completed by ' + details.payer.name.given_name);
-      await deleteCartItemsByCustomerId(customerId);
-      console.log(details, data);
-  
   
       const updatedOrders = orders.map((order) =>
         order.orderId === orderId ? { ...order, paymentStatus: 'Paid' } : order
       );
       setOrders(updatedOrders);
+  
+      // Use the 'order' directly from the map function
+      const updatedOrder = updatedOrders.find((o) => o.orderId === orderId);
+  
+      sendEmail({
+        to: customerEmail,
+        message: `Thank you for your order! Your payment of Rs. ${updatedOrder.orderAmount} has been received.`,
+        subject: 'Green Supermarket',
+      });
+  
+      alert('Transaction completed by ' + details.payer.name.given_name);
+      await deleteCartItemsByCustomerId(customerId);
+      console.log(details, data);
     } catch (error) {
       console.error('Error updating payment status:', error.message);
     }
   };
+  
 
   // delete order by id
   const deleteOrder = async (orderId) => {
@@ -168,6 +195,37 @@ const PayOrder = () => {
     }
   };
 
+
+  const sendEmail = async ({ to, subject, message }) => {
+    try {
+      const emailData = {
+        to,
+        message,
+        subject,
+      };
+  
+      const response = await fetch('http://localhost:8080/api/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(emailData),
+      });
+  
+      if (!response.ok) {
+        console.error('Failed to send email:', response.statusText);
+        console.error('Failed to send email:', emailData);
+      } else {
+        console.log('Email sent successfully:', emailData);
+      }
+    } catch (error) {
+      console.error('Error sending email:', error.message);
+    }
+  };
+  
+
+  
+
   return (
     <div className='pay-big-container'>
       <center>
@@ -234,6 +292,9 @@ const PayOrder = () => {
             </button>
               </>
             )}
+
+
+
 
           </div>
         </div>
