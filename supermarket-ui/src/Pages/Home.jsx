@@ -7,6 +7,7 @@ const Home = () => {
 
     const location = useLocation();
     const responseId = location.state && location.state.response;
+    
 
     return(
 
@@ -16,7 +17,7 @@ const Home = () => {
                     <div className="hero-content">
                         <h1>Welcome to Green Supermarket</h1>
                         <p>Best place to buy your groceries</p>
-                        <p>{responseId}</p>
+                    
                 
                     </div>
                 </div>

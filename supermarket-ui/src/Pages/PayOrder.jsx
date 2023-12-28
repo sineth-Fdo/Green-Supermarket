@@ -7,6 +7,7 @@ const PayOrder = () => {
   const { CID } = useParams();
   const [orders, setOrders] = useState([]);
   const [customerEmail, setCustomerEmail] = useState('');
+  const [orderAmount, setOrderAmount] = useState(0);
   const navigate = useNavigate();
 
 
@@ -116,7 +117,7 @@ const PayOrder = () => {
 
   const handleCancelBtn = async (data) => {
     const orderId = orders[0].orderId;
-    alert('Payment canceled');
+    alert('Order is canceled');
     const customerId = CID;
     await deleteCartItemsByCustomerId(customerId);
     deleteOrder(orderId)
@@ -180,22 +181,6 @@ const PayOrder = () => {
     }
   };
 
-  const cancelOrderAndDeleteCartItems = async () => {
-    try {
-      const customerId = CID;
-      await deleteCartItemsByCustomerId(customerId);
-
- 
-      if (orders.length > 0) {
-        const orderIdToCancel = orders[0].orderId;
-        await cancelOrderById(orderIdToCancel);
-      }
-    } catch (error) {
-      console.error('Error canceling order and deleting cart items:', error.message);
-    }
-  };
-
-
   const sendEmail = async ({ to, subject, message }) => {
     try {
       const emailData = {
@@ -231,7 +216,7 @@ const PayOrder = () => {
       <center>
         <br />
         <br />
-        <h1>Your Order is successfully Placed</h1>
+        <h1>Order Checkout</h1>
         <br /><br />
       </center>
     <div className='pay-container'>
@@ -260,6 +245,7 @@ const PayOrder = () => {
               </div>
 
               {order.paymentStatus === 'pending'  && (
+
                 <>
 
               <div className="paypal-container">

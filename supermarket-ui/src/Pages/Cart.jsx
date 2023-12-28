@@ -121,8 +121,7 @@ const Cart = () => {
       <center>
         <br /><br />
         <h1>Manage Cart</h1>
-        <p>{cartId}</p>
-        <p>{customerEmail}</p>
+       
         <br />
       </center>
       <div className="cart-container">

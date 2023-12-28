@@ -84,8 +84,7 @@ const ViewProduct = () => {
                  
                 <div className="upper-div">
                     <h1>Product Details</h1>
-                    <p>Product ID: {id}</p>
-                    <p> customer id {customerId}</p>
+                  
                 </div>
                 <div className="lower-div">
                     <div className="left-div">
