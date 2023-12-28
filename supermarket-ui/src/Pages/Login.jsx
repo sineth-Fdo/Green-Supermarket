@@ -30,8 +30,9 @@ const Login = () => {
       
             setResponse(`Welcome, ${response.data.id}!`);
             navigate(`/home`, { state: { response: `${response.data.id}` } });
-            alert(response.data.id);
+            alert("Welcome to Green Supermarket");
           } catch (error) {
+            alert("Invalid Credentials")
             console.error('API Error:', error);
             setResponse('Authentication failed. Please check your credentials.');
         

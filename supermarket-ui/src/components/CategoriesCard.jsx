@@ -9,7 +9,7 @@ const CategoriesCard = (props) =>{
         <div className="category-section">
             <br /><br />
             <h1 className="main-header">Popular Categories</h1>
-            <h2>{props.customerId}</h2>
+      
         <div className="category-more-hero">
             <h3 className="category-more" onClick={() => { navigate('/shop/snacks', { state: { customerId: props.customerId } });}}>See more {'>>'}</h3>
         </div>

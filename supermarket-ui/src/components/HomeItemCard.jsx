@@ -30,18 +30,18 @@ const HomeItemCard = (props) => {
     <div className="cards">
       <div className="card-container">
         <div className="text-cont">
-          <h2>Popular Vegetables</h2>
+          <h2>Popular Items</h2>
         </div>
         <div className="prop-card">
           {vegetableProducts.map((product) => (
             <div key={product.id} onClick={() => { navigate(`/viewproduct/${product.id}`, { state: { customerId: props.customerId } }) }}>
                 {
-                    product.id === 1 || product.id === 2 || product.id === 23  || product.id === 25 || product.id === 28?  (
+                    product.id === 1 || product.id === 2 || product.id === 5 || product.id === 7 ?  (
                         <>
                             <div className="card">
                                 <img src={`../public/images/${product.image}`}  alt={product.name} />
                                 <h3>{product.name}</h3>
-                                <p>{`Rs. ${product.price} per g`}</p>
+                                <p>{`Rs. ${product.price}  = 100g`}</p>
                             </div>
                         </>
                     ):(null)

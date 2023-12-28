@@ -120,21 +120,23 @@ const Shop = () => {
          <h1>{selectedCategory ? selectedCategory.toUpperCase() : 'ALL PRODUCTS'}</h1>
         </div>
 
+
         {
           customerId ? (
             <p className="text-cart" onClick={() => {navigate(`/cart/${customerId}`);}}>View Cart{' >> '}</p>
-          ) : (
-            <p className="text-cart" onClick={() => {navigate('/login');}}>Login to View Cart{' >> '}</p>
-          )
-        }
+            ) : (
+              <p className="text-cart" onClick={() => {navigate('/login');}}>Login to View Cart{' >> '}</p>
+              )
+            }
       
       </div>
          
       <center>
         <br />
+            <p className='back-home'  onClick={() => {  navigate(`/home`, { state: { response: `${customerId}` } });}}>{' << '} Home</p>
         <br />
         <h1>Shop By Category</h1>
-        <p>customer id {customerId}</p>
+        <br />
         <p>{name}</p>
         <br />
         <br />
