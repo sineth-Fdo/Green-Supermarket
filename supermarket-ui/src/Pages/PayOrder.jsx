@@ -117,10 +117,18 @@ const PayOrder = () => {
 
   const handleCancelBtn = async (data) => {
     const orderId = orders[0].orderId;
-    alert('Order is canceled');
     const customerId = CID;
     await deleteCartItemsByCustomerId(customerId);
     deleteOrder(orderId)
+   
+    sendEmail({
+      to: customerEmail,
+      message: `Your order has been cancelled successfully.`,
+      subject: 'Green Supermarket',
+    });
+
+
+    alert('Order is canceled');
     navigate(`/shop/vegetables`, { state:  { customerId: `${CID}` }  })
 
 

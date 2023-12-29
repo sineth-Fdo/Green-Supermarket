@@ -81,7 +81,7 @@ const ViewProduct = () => {
                 )
             }
                   
-                 
+
                 <div className="upper-div">
                     <h1>Product Details</h1>
                   
@@ -96,7 +96,11 @@ const ViewProduct = () => {
                             <h2 className="pro-name">{product.name}</h2>
                             <h4 className="pro-price">Rs. {product.price}</h4>
                             <div className="weight-info">
-                                <p className="pro-weight">1 kg</p>
+                                <p className="pro-weight">{
+                                  
+                                    product.category.name === "snacks"|| product.category.name ==="beauty products" || product.category.name ==="Ice Cream" || product.category.name ==="Juice" ?
+                                                                                             "1 Pack" : "100 g"
+                                }</p>
                             </div>
 
                             <div className="pro-qty-add-n-sub">
